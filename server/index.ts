@@ -36,7 +36,10 @@ async function main() {
 
   const cache = new BggCache(dataDir);
   await cache.init();
-  const bgg = new BggClient(cache, { bggRateLimitMs: store.get().settings.bggRateLimitMs });
+  const bgg = new BggClient(cache, {
+    bggRateLimitMs: store.get().settings.bggRateLimitMs,
+    bggBearerToken: store.get().settings.bggBearerToken,
+  });
   const jobs = new JobTracker();
 
   const app = Fastify({ logger: { level: process.env.LOG_LEVEL ?? "info" } });

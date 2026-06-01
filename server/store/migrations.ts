@@ -1,7 +1,7 @@
 import { AppState, Box, DEFAULT_SETTINGS, Placement, UUID } from "../types.js";
 import { resolveDims } from "../solver/geometry.js";
 
-const CURRENT_SCHEMA_VERSION = 3;
+const CURRENT_SCHEMA_VERSION = 4;
 
 export function applyMigrations(raw: AppState): AppState {
   const settings = { ...DEFAULT_SETTINGS, ...(raw.settings ?? {}) };
@@ -74,6 +74,9 @@ function migrate(state: AppState, toVersion: number): AppState {
       });
       return { ...state, settings, layouts };
     }
+    case 4:
+      // bggBearerToken added to Settings; defaults to null via DEFAULT_SETTINGS spread.
+      return state;
     default:
       return state;
   }

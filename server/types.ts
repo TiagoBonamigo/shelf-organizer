@@ -91,6 +91,7 @@ export interface Settings {
   defaultMaxStackCount: number | null;
   defaultMaxStackHeightMm: number | null;
   bggUsername: string | null;
+  bggBearerToken: string | null;
   bggRateLimitMs: number;
   schemaVersion: number;
 }
@@ -138,8 +139,9 @@ export const DEFAULT_SETTINGS: Settings = {
   defaultMaxStackCount: 4,
   defaultMaxStackHeightMm: null,
   bggUsername: null,
+  bggBearerToken: null,
   bggRateLimitMs: 2000,
-  schemaVersion: 3,
+  schemaVersion: 4,
 };
 
 export const EMPTY_STATE: AppState = {

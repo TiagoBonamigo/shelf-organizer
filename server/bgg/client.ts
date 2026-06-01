@@ -16,6 +16,7 @@ export interface BggClientStatus {
 
 interface Settings {
   bggRateLimitMs: number;
+  bggBearerToken: string | null;
 }
 
 export class BggClient {
@@ -92,7 +93,11 @@ export class BggClient {
 
   private async doFetch(url: string): Promise<string> {
     this.lastSentAt = Date.now();
-    const res = await request(url, { method: "GET" });
+    const headers: Record<string, string> = {};
+    if (this.settings.bggBearerToken) {
+      headers["Authorization"] = `Bearer ${this.settings.bggBearerToken}`;
+    }
+    const res = await request(url, { method: "GET", headers });
     const text = await res.body.text();
     if (res.statusCode === 200) {
       this.cache.set(url, text);

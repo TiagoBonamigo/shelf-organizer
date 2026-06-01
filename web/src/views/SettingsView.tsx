@@ -122,6 +122,26 @@ export const SettingsView: React.FC = () => {
               style={{ width: 220 }}
             />
           </div>
+          <div className="settings-field">
+            <div>
+              <div className="field-label">BGG API bearer token</div>
+              <div className="field-sub">
+                Required since late 2025. Register at{" "}
+                <a href="https://boardgamegeek.com/using_the_xml_api" target="_blank" rel="noreferrer">
+                  boardgamegeek.com/using_the_xml_api
+                </a>{" "}
+                to obtain a token.
+              </div>
+            </div>
+            <input
+              className="input"
+              type="password"
+              value={s.bggBearerToken ?? ""}
+              placeholder="paste token here"
+              onChange={(e) => patch({ bggBearerToken: e.target.value || null })}
+              style={{ width: 220 }}
+            />
+          </div>
           <div
             className="settings-field"
             style={

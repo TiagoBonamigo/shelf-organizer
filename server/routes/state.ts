@@ -11,7 +11,7 @@ export function registerStateRoutes(app: FastifyInstance, store: Store, bgg: Bgg
     const patch = req.body as Record<string, unknown>;
     return store.update((s) => {
       s.settings = { ...s.settings, ...patch };
-      bgg.setSettings({ bggRateLimitMs: s.settings.bggRateLimitMs });
+      bgg.setSettings({ bggRateLimitMs: s.settings.bggRateLimitMs, bggBearerToken: s.settings.bggBearerToken });
     }).settings;
   });
 }

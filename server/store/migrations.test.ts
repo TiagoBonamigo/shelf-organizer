@@ -37,7 +37,7 @@ describe("applyMigrations", () => {
       settings: { ...DEFAULT_SETTINGS, schemaVersion: 0 },
     } as AppState;
     const migrated = applyMigrations(input);
-    expect(migrated.settings.schemaVersion).toBe(3);
+    expect(migrated.settings.schemaVersion).toBe(4);
   });
 
   it("leaves up-to-date state unchanged", () => {
@@ -52,7 +52,7 @@ describe("applyMigrations", () => {
     const migrated = applyMigrations(input);
     expect(migrated.cabinets).toHaveLength(1);
     expect(migrated.cabinets[0]).toEqual({ id: "c1", name: "A", position: 0, shelfIds: [] });
-    expect(migrated.settings.schemaVersion).toBe(3);
+    expect(migrated.settings.schemaVersion).toBe(4);
   });
 
   it("v2: flags a layout whose child stack violates W/D containment", () => {
@@ -83,7 +83,7 @@ describe("applyMigrations", () => {
     };
     const migrated = applyMigrations(input);
     expect(migrated.layouts[0].stale).toBe(true);
-    expect(migrated.settings.schemaVersion).toBe(3);
+    expect(migrated.settings.schemaVersion).toBe(4);
   });
 
   it("v2: leaves a containment-compliant layout unflagged", () => {
@@ -131,6 +131,6 @@ describe("applyMigrations", () => {
     const migrated = applyMigrations(input);
     expect((migrated.settings as { defaultProximityWeight?: number }).defaultProximityWeight).toBeUndefined();
     expect((migrated.layouts[0].metrics as { proximityScore?: number }).proximityScore).toBeUndefined();
-    expect(migrated.settings.schemaVersion).toBe(3);
+    expect(migrated.settings.schemaVersion).toBe(4);
   });
 });
