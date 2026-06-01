@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "name": "edge-cases",
+    "title": "Edge cases",
+    "description": "Boxes missing dimensions, one too big for any shelf, a horizontal-only shelf, and a stack-height-limited shelf. Use to verify validator and unplaced reporting.",
+    "tags": ["validation", "unplaced", "stacking"]
+  },
+  "state": {
+    "cabinets": [
+      { "id": "cab-1", "name": "Test rig", "position": 0, "shelfIds": ["shelf-tight", "shelf-tall", "shelf-stacked", "shelf-limited"] }
+    ],
+    "shelves": [
+      {
+        "id": "shelf-tight",
+        "cabinetId": "cab-1", "position": 0,
+        "widthMm": 600, "heightMm": 320, "depthMm": 300,
+        "orientation": "vertical", "paddingReserveMm": 0,
+        "maxStackCount": null, "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-tall",
+        "cabinetId": "cab-1", "position": 1,
+        "widthMm": 800, "heightMm": 400, "depthMm": 300,
+        "orientation": "vertical", "paddingReserveMm": 20,
+        "maxStackCount": null, "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-stacked",
+        "cabinetId": "cab-1", "position": 2,
+        "widthMm": 800, "heightMm": 220, "depthMm": 300,
+        "orientation": "horizontal", "paddingReserveMm": 0,
+        "maxStackCount": 5, "maxStackHeightMm": 220
+      },
+      {
+        "id": "shelf-limited",
+        "cabinetId": "cab-1", "position": 3,
+        "widthMm": 800, "heightMm": 220, "depthMm": 300,
+        "orientation": "horizontal", "paddingReserveMm": 0,
+        "maxStackCount": 2, "maxStackHeightMm": null
+      }
+    ],
+    "boxes": [
+      {
+        "id": "box-no-dims",
+        "bggId": 133473, "name": "Sushi Go! (no dimensions)",
+        "dimensions": { "w": 0, "h": 0, "d": 0 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-too-big",
+        "bggId": 134031, "name": "Shadows of Brimstone (too big)",
+        "dimensions": { "w": 900, "h": 500, "d": 200 },
+        "dimensionsFromBgg": { "w": 900, "h": 500, "d": 200 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-exact-fit",
+        "bggId": null, "name": "Exact-fit (fills shelf-tight)",
+        "dimensions": { "w": 600, "h": 320, "d": 300 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "wh",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-small-a",
+        "bggId": 258, "name": "Fluxx",
+        "dimensions": { "w": 145, "h": 95, "d": 35 },
+        "dimensionsFromBgg": { "w": 145, "h": 95, "d": 35 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-small-b",
+        "bggId": 129622, "name": "Love Letter",
+        "dimensions": { "w": 100, "h": 65, "d": 35 },
+        "dimensionsFromBgg": { "w": 100, "h": 65, "d": 35 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-flat-a",
+        "bggId": 233867, "name": "Welcome To...",
+        "dimensions": { "w": 240, "h": 165, "d": 50 },
+        "dimensionsFromBgg": { "w": 240, "h": 165, "d": 50 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-flat-b",
+        "bggId": 277659, "name": "Welcome To New Las Vegas",
+        "dimensions": { "w": 240, "h": 165, "d": 50 },
+        "dimensionsFromBgg": { "w": 240, "h": 165, "d": 50 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-tall",
+        "bggId": null, "name": "Tall standing box",
+        "dimensions": { "w": 200, "h": 380, "d": 200 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      }
+    ],
+    "layouts": [],
+    "activeLayoutId": null,
+    "settings": {
+      "defaultPaddingReserveMm": 0,
+      "defaultMaxStackCount": 4,
+      "defaultMaxStackHeightMm": null,
+      "defaultProximityWeight": 0.3,
+      "bggUsername": null,
+      "bggRateLimitMs": 2000,
+      "schemaVersion": 1
+    }
+  }
+}

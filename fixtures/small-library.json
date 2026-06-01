@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "name": "small-library",
+    "title": "Small library",
+    "description": "One cabinet with three vertical shelves and 8 standalone boxes that fit comfortably. Good for sanity-checking the solver on a small input.",
+    "tags": ["small", "no-expansions"]
+  },
+  "state": {
+    "cabinets": [
+      { "id": "cab-1", "name": "Living room", "position": 0, "shelfIds": ["shelf-1", "shelf-2", "shelf-3"] }
+    ],
+    "shelves": [
+      {
+        "id": "shelf-1",
+        "cabinetId": "cab-1",
+        "position": 0,
+        "widthMm": 1000,
+        "heightMm": 380,
+        "depthMm": 300,
+        "orientation": "vertical",
+        "paddingReserveMm": 20,
+        "maxStackCount": null,
+        "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-2",
+        "cabinetId": "cab-1",
+        "position": 1,
+        "widthMm": 1000,
+        "heightMm": 320,
+        "depthMm": 300,
+        "orientation": "vertical",
+        "paddingReserveMm": 20,
+        "maxStackCount": null,
+        "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-3",
+        "cabinetId": "cab-1",
+        "position": 2,
+        "widthMm": 1000,
+        "heightMm": 240,
+        "depthMm": 300,
+        "orientation": "vertical",
+        "paddingReserveMm": 20,
+        "maxStackCount": null,
+        "maxStackHeightMm": null
+      }
+    ],
+    "boxes": [
+      {
+        "id": "box-gloomhaven",
+        "bggId": 174430,
+        "name": "Gloomhaven",
+        "dimensions": { "w": 365, "h": 290, "d": 175 },
+        "dimensionsFromBgg": { "w": 365, "h": 290, "d": 175 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-wingspan",
+        "bggId": 266192,
+        "name": "Wingspan",
+        "dimensions": { "w": 305, "h": 305, "d": 75 },
+        "dimensionsFromBgg": { "w": 305, "h": 305, "d": 75 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-cascadia",
+        "bggId": 295947,
+        "name": "Cascadia",
+        "dimensions": { "w": 295, "h": 295, "d": 75 },
+        "dimensionsFromBgg": { "w": 295, "h": 295, "d": 75 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-azul",
+        "bggId": 230802,
+        "name": "Azul",
+        "dimensions": { "w": 295, "h": 295, "d": 75 },
+        "dimensionsFromBgg": { "w": 295, "h": 295, "d": 75 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-codenames",
+        "bggId": 178900,
+        "name": "Codenames",
+        "dimensions": { "w": 195, "h": 295, "d": 50 },
+        "dimensionsFromBgg": { "w": 195, "h": 295, "d": 50 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-7wonders",
+        "bggId": 68448,
+        "name": "7 Wonders",
+        "dimensions": { "w": 295, "h": 195, "d": 75 },
+        "dimensionsFromBgg": { "w": 295, "h": 195, "d": 75 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-splendor",
+        "bggId": 148228,
+        "name": "Splendor",
+        "dimensions": { "w": 295, "h": 195, "d": 55 },
+        "dimensionsFromBgg": { "w": 295, "h": 195, "d": 55 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-patchwork",
+        "bggId": 163412,
+        "name": "Patchwork",
+        "dimensions": { "w": 220, "h": 220, "d": 60 },
+        "dimensionsFromBgg": { "w": 220, "h": 220, "d": 60 },
+        "dimensionsSource": "bgg",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      }
+    ],
+    "layouts": [],
+    "activeLayoutId": null,
+    "settings": {
+      "defaultPaddingReserveMm": 20,
+      "defaultMaxStackCount": 4,
+      "defaultMaxStackHeightMm": null,
+      "defaultProximityWeight": 0.3,
+      "bggUsername": null,
+      "bggRateLimitMs": 2000,
+      "schemaVersion": 1
+    }
+  }
+}

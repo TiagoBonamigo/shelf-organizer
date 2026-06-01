@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "name": "with-expansions",
+    "title": "With expansions",
+    "description": "Two cabinets, multiple base-game + expansion chains. Exercises proximity scoring and base-game grouping.",
+    "tags": ["expansions", "proximity", "medium"]
+  },
+  "state": {
+    "cabinets": [
+      { "id": "cab-1", "name": "Main wall", "position": 0, "shelfIds": ["shelf-1", "shelf-2", "shelf-3"] },
+      { "id": "cab-2", "name": "Side cabinet", "position": 1, "shelfIds": ["shelf-4", "shelf-5"] }
+    ],
+    "shelves": [
+      {
+        "id": "shelf-1", "cabinetId": "cab-1", "position": 0,
+        "widthMm": 1100, "heightMm": 380, "depthMm": 320,
+        "orientation": "vertical", "paddingReserveMm": 20,
+        "maxStackCount": null, "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-2", "cabinetId": "cab-1", "position": 1,
+        "widthMm": 1100, "heightMm": 320, "depthMm": 320,
+        "orientation": "vertical", "paddingReserveMm": 20,
+        "maxStackCount": null, "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-3", "cabinetId": "cab-1", "position": 2,
+        "widthMm": 1100, "heightMm": 240, "depthMm": 320,
+        "orientation": "mixed", "paddingReserveMm": 20,
+        "maxStackCount": 4, "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-4", "cabinetId": "cab-2", "position": 0,
+        "widthMm": 900, "heightMm": 380, "depthMm": 280,
+        "orientation": "vertical", "paddingReserveMm": 20,
+        "maxStackCount": null, "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-5", "cabinetId": "cab-2", "position": 1,
+        "widthMm": 900, "heightMm": 240, "depthMm": 280,
+        "orientation": "horizontal", "paddingReserveMm": 20,
+        "maxStackCount": 5, "maxStackHeightMm": 350
+      }
+    ],
+    "boxes": [
+      {
+        "id": "box-wingspan",
+        "bggId": 266192, "name": "Wingspan",
+        "dimensions": { "w": 305, "h": 305, "d": 75 },
+        "dimensionsFromBgg": { "w": 305, "h": 305, "d": 75 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": null, "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-wingspan-europe",
+        "bggId": 290448, "name": "European Expansion",
+        "dimensions": { "w": 240, "h": 240, "d": 50 },
+        "dimensionsFromBgg": { "w": 240, "h": 240, "d": 50 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-wingspan", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-wingspan-oceania",
+        "bggId": 300580, "name": "Oceania Expansion",
+        "dimensions": { "w": 240, "h": 240, "d": 50 },
+        "dimensionsFromBgg": { "w": 240, "h": 240, "d": 50 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-wingspan", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-spirit-island",
+        "bggId": 162886, "name": "Spirit Island",
+        "dimensions": { "w": 300, "h": 300, "d": 75 },
+        "dimensionsFromBgg": { "w": 300, "h": 300, "d": 75 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": null, "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-spirit-island-bc",
+        "bggId": 211147, "name": "Branch & Claw",
+        "dimensions": { "w": 240, "h": 240, "d": 50 },
+        "dimensionsFromBgg": { "w": 240, "h": 240, "d": 50 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-spirit-island", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-spirit-island-je",
+        "bggId": 246900, "name": "Jagged Earth",
+        "dimensions": { "w": 305, "h": 305, "d": 90 },
+        "dimensionsFromBgg": { "w": 305, "h": 305, "d": 90 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-spirit-island", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-terraforming-mars",
+        "bggId": 167791, "name": "Terraforming Mars",
+        "dimensions": { "w": 305, "h": 220, "d": 70 },
+        "dimensionsFromBgg": { "w": 305, "h": 220, "d": 70 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": null, "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-tm-prelude",
+        "bggId": 234487, "name": "Prelude",
+        "dimensions": { "w": 220, "h": 220, "d": 30 },
+        "dimensionsFromBgg": { "w": 220, "h": 220, "d": 30 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-terraforming-mars", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-tm-hellas",
+        "bggId": 196091, "name": "Hellas & Elysium",
+        "dimensions": { "w": 295, "h": 215, "d": 30 },
+        "dimensionsFromBgg": { "w": 295, "h": 215, "d": 30 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-terraforming-mars", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-tm-venus",
+        "bggId": 199907, "name": "Venus Next",
+        "dimensions": { "w": 305, "h": 220, "d": 40 },
+        "dimensionsFromBgg": { "w": 305, "h": 220, "d": 40 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-terraforming-mars", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-catan",
+        "bggId": 13, "name": "Catan",
+        "dimensions": { "w": 290, "h": 290, "d": 75 },
+        "dimensionsFromBgg": { "w": 290, "h": 290, "d": 75 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": null, "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-catan-seafarers",
+        "bggId": 926, "name": "Seafarers",
+        "dimensions": { "w": 290, "h": 290, "d": 50 },
+        "dimensionsFromBgg": { "w": 290, "h": 290, "d": 50 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-catan", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-azul",
+        "bggId": 230802, "name": "Azul",
+        "dimensions": { "w": 295, "h": 295, "d": 75 },
+        "dimensionsFromBgg": { "w": 295, "h": 295, "d": 75 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": null, "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-7wonders",
+        "bggId": 68448, "name": "7 Wonders",
+        "dimensions": { "w": 295, "h": 195, "d": 75 },
+        "dimensionsFromBgg": { "w": 295, "h": 195, "d": 75 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": null, "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      },
+      {
+        "id": "box-7wonders-leaders",
+        "bggId": 91312, "name": "Leaders",
+        "dimensions": { "w": 220, "h": 165, "d": 35 },
+        "dimensionsFromBgg": { "w": 220, "h": 165, "d": 35 },
+        "dimensionsSource": "bgg", "preferredForwardFace": "auto",
+        "expansionOfBoxId": "box-7wonders", "bggLastFetchedAt": "2026-01-15T12:00:00Z"
+      }
+    ],
+    "layouts": [],
+    "activeLayoutId": null,
+    "settings": {
+      "defaultPaddingReserveMm": 20,
+      "defaultMaxStackCount": 4,
+      "defaultMaxStackHeightMm": null,
+      "defaultProximityWeight": 0.5,
+      "bggUsername": null,
+      "bggRateLimitMs": 2000,
+      "schemaVersion": 1
+    }
+  }
+}

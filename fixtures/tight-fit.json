@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "name": "tight-fit",
+    "title": "Tight fit",
+    "description": "Boxes total to roughly 95% of total shelf width. Stresses the packing algorithm and minimal-gap optimization.",
+    "tags": ["dense", "solver-stress"]
+  },
+  "state": {
+    "cabinets": [
+      { "id": "cab-1", "name": "Packed cabinet", "position": 0, "shelfIds": ["shelf-1", "shelf-2"] }
+    ],
+    "shelves": [
+      {
+        "id": "shelf-1",
+        "cabinetId": "cab-1", "position": 0,
+        "widthMm": 1000, "heightMm": 330, "depthMm": 300,
+        "orientation": "vertical", "paddingReserveMm": 0,
+        "maxStackCount": null, "maxStackHeightMm": null
+      },
+      {
+        "id": "shelf-2",
+        "cabinetId": "cab-1", "position": 1,
+        "widthMm": 1000, "heightMm": 320, "depthMm": 300,
+        "orientation": "vertical", "paddingReserveMm": 0,
+        "maxStackCount": null, "maxStackHeightMm": null
+      }
+    ],
+    "boxes": [
+      {
+        "id": "box-a",
+        "bggId": null, "name": "Block 100",
+        "dimensions": { "w": 100, "h": 300, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-b",
+        "bggId": null, "name": "Block 120",
+        "dimensions": { "w": 120, "h": 300, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-c",
+        "bggId": null, "name": "Block 150",
+        "dimensions": { "w": 150, "h": 300, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-d",
+        "bggId": null, "name": "Block 180",
+        "dimensions": { "w": 180, "h": 300, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-e",
+        "bggId": null, "name": "Block 200",
+        "dimensions": { "w": 200, "h": 300, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-f",
+        "bggId": null, "name": "Block 250",
+        "dimensions": { "w": 250, "h": 300, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-g",
+        "bggId": null, "name": "Block 220 — short",
+        "dimensions": { "w": 220, "h": 280, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-h",
+        "bggId": null, "name": "Block 180 — short",
+        "dimensions": { "w": 180, "h": 280, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-i",
+        "bggId": null, "name": "Block 200 — short",
+        "dimensions": { "w": 200, "h": 280, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-j",
+        "bggId": null, "name": "Block 350 — short",
+        "dimensions": { "w": 350, "h": 280, "d": 200 },
+        "dimensionsFromBgg": null, "dimensionsSource": "manual",
+        "preferredForwardFace": "wh", "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      }
+    ],
+    "layouts": [],
+    "activeLayoutId": null,
+    "settings": {
+      "defaultPaddingReserveMm": 0,
+      "defaultMaxStackCount": 4,
+      "defaultMaxStackHeightMm": null,
+      "defaultProximityWeight": 0,
+      "bggUsername": null,
+      "bggRateLimitMs": 2000,
+      "schemaVersion": 1
+    }
+  }
+}

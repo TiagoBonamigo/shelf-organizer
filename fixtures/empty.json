@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "name": "empty",
+    "title": "Empty",
+    "description": "No cabinets, shelves, or boxes. Starting point for building a layout from scratch.",
+    "tags": ["minimal", "blank-slate"]
+  },
+  "state": {
+    "cabinets": [],
+    "shelves": [],
+    "boxes": [],
+    "layouts": [],
+    "activeLayoutId": null,
+    "settings": {
+      "defaultPaddingReserveMm": 20,
+      "defaultMaxStackCount": 4,
+      "defaultMaxStackHeightMm": null,
+      "defaultProximityWeight": 0.3,
+      "bggUsername": null,
+      "bggRateLimitMs": 2000,
+      "schemaVersion": 1
+    }
+  }
+}

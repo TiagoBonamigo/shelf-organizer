@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "name": "horizontal-stacks",
+    "title": "Horizontal stacking demo",
+    "description": "One horizontal shelf packed with flat square boxes that compose into pyramid stacks. Demonstrates the base+knapsack solver: largest box on the bottom, knapsack-chosen toppers chained by W/D containment, multiple parallel stacks when no single base contains everything.",
+    "tags": ["horizontal", "stacking", "demo"]
+  },
+  "state": {
+    "cabinets": [
+      { "id": "cab-1", "name": "Game closet", "position": 0, "shelfIds": ["shelf-h1"] }
+    ],
+    "shelves": [
+      {
+        "id": "shelf-h1",
+        "cabinetId": "cab-1",
+        "position": 0,
+        "widthMm": 1200,
+        "heightMm": 400,
+        "depthMm": 420,
+        "orientation": "horizontal",
+        "paddingReserveMm": 10,
+        "maxStackCount": 5,
+        "maxStackHeightMm": null
+      }
+    ],
+    "boxes": [
+      {
+        "id": "box-eclipse",
+        "bggId": 246900,
+        "name": "Eclipse: Second Dawn",
+        "dimensions": { "w": 400, "h": 100, "d": 400 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-scythe",
+        "bggId": 169786,
+        "name": "Scythe",
+        "dimensions": { "w": 305, "h": 80, "d": 305 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-wingspan",
+        "bggId": 266192,
+        "name": "Wingspan",
+        "dimensions": { "w": 305, "h": 75, "d": 305 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-cascadia",
+        "bggId": 295947,
+        "name": "Cascadia",
+        "dimensions": { "w": 295, "h": 75, "d": 295 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-azul",
+        "bggId": 230802,
+        "name": "Azul",
+        "dimensions": { "w": 295, "h": 70, "d": 295 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-patchwork",
+        "bggId": 163412,
+        "name": "Patchwork",
+        "dimensions": { "w": 220, "h": 60, "d": 220 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-7wonders",
+        "bggId": 68448,
+        "name": "7 Wonders",
+        "dimensions": { "w": 295, "h": 75, "d": 195 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-splendor",
+        "bggId": 148228,
+        "name": "Splendor",
+        "dimensions": { "w": 295, "h": 55, "d": 195 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-loveletter",
+        "bggId": 129622,
+        "name": "Love Letter",
+        "dimensions": { "w": 180, "h": 30, "d": 120 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      },
+      {
+        "id": "box-sushigo",
+        "bggId": 133473,
+        "name": "Sushi Go!",
+        "dimensions": { "w": 130, "h": 30, "d": 130 },
+        "dimensionsFromBgg": null,
+        "dimensionsSource": "manual",
+        "preferredForwardFace": "auto",
+        "expansionOfBoxId": null,
+        "bggLastFetchedAt": null
+      }
+    ],
+    "layouts": [],
+    "activeLayoutId": null,
+    "settings": {
+      "defaultPaddingReserveMm": 20,
+      "defaultMaxStackCount": 5,
+      "defaultMaxStackHeightMm": null,
+      "defaultProximityWeight": 0.3,
+      "bggUsername": null,
+      "bggRateLimitMs": 2000,
+      "schemaVersion": 1
+    }
+  }
+}
