@@ -47,13 +47,14 @@ Vitest picks up `server/**/*.test.ts` and `web/src/**/*.test.{ts,tsx}` (see `vit
 
 ### Solver (`server/solver/`)
 
-Three phases (`index.ts` orchestrates):
+Four phases (`index.ts` orchestrates):
 
-1. **Assignment** — sort placeable boxes by largest-two-dim area descending, score each candidate shelf as `Δgap − w · Δproximity`, assign to best shelf or push to the unplaced list.
+1. **Assignment** — sort placeable boxes by face area descending, score each candidate shelf by `-remaining_width` (concentrate fill), assign to best shelf or push to the unplaced list.
 2. **Per-shelf packing** (`pack.ts`) — branches on `shelf.orientation`: vertical (standing, FFD by depth), horizontal (pyramid stacks, parent must have strictly larger two-largest-dim area than child), or mixed (tries split points, picks the best). Pinned placements are anchored.
-3. **Local search** — simulated annealing (geometric cooling from T0=500). Each iteration tries a random swap or move via `tryLocalMove`, runs it through the validator, accepts on positive delta or with `exp(Δ/T)` probability. Keeps the best layout seen.
+3. **Local search** — simulated annealing (geometric cooling from T0=500). Each iteration tries a random swap or move via `tryLocalMove`, runs it through the validator, accepts on positive delta or with `exp(Δ/T)` probability. Keeps the best layout seen. Uses a seeded PRNG (mulberry32) so the same input always produces the same layout.
+4. **Shelf-emptying migration** — greedy deterministic pass: tries to drain the least-occupied shelves by moving their stacks onto other shelves (floor slot or stack-on-stack). Only commits when the source shelf ends up fully empty.
 
-Score is `largestGapMm − proximityWeight · proximityPenalty − 1e9 · unplacedCount`. Distance for proximity is 0 (adjacent on same shelf), 1 (same shelf), 2 (neighbour shelf), 3 (same cabinet), 4 (different cabinet), 5 (unplaced).
+Score is `-largestGapMm - 1e9 * unplacedCount` (higher is better; minimise gap and unplaced).
 
 `server/solver/geometry.ts` owns the box-to-shelf-axes mapping (resolves `forwardFace` × `orientation` → `(widthMm, heightMm)` on the shelf). All consumers — solver, validator, rendering — must go through it; do **not** re-derive dimension math elsewhere.
 
@@ -71,8 +72,9 @@ Score is `largestGapMm − proximityWeight · proximityPenalty − 1e9 · unplac
 
 ## Things that bite
 
-- **Shared types live in `server/types.ts`.** The web project includes that file directly via `tsconfig`. Adding a field to `AppState` means updating the seed, migrations (bump `schemaVersion` if breaking), and likely the Zustand store's initial state in `web/src/state/store.ts`.
+- **Shared types live in `server/types.ts`.** The web project includes that file directly via `tsconfig`. Adding a field to `AppState` means updating the seed, migrations (bump `schemaVersion` if breaking), and likely the Zustand store's initial state in `web/src/state/store.ts`. Current schema version: **4**.
 - **All mutations go through `Store.update` or `Store.replace`** so the debounced write fires. Mutating `store.get()` in place without calling `update` will skip persistence.
 - **Dimensions are integer millimetres** throughout. BGG returns inches; ingest multiplies by 25.4 and rounds. Don't reintroduce floats in the data model.
 - **CORS** is open only to `localhost`/`127.0.0.1` origins (see the `onSend` hook in `server/index.ts`). Don't broaden it.
 - **The compiled server's entrypoint path** (`dist/server/index.js` vs `dist/server/server/index.js`) depends on tsc's `rootDir` choice — `server/index.ts` tries multiple candidate locations for the static SPA bundle to handle both layouts.
+- **BGG API requires authentication.** Since late 2025, all requests to `boardgamegeek.com/xmlapi2/*` return 401 without a bearer token. The token is stored in `settings.bggBearerToken` and passed as `Authorization: Bearer <token>` by `BggClient`. Users register at `boardgamegeek.com/using_the_xml_api` to get a token, then paste it in Settings → BoardGameGeek sync.
